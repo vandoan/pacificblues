@@ -45,13 +45,22 @@ css
 	- overflow: scroll and white space: nowrap - for infinite expansion of div
 	- animation delays
 		- http://www.w3schools.com/cssref/tryit.asp?filename=trycss3_animation-delay2
-		
+
 infinite loop in out 
 	- http://stackoverflow.com/questions/23985018/simple-css-animation-loop-fading-in-out-loading-text
 	- https://css-tricks.com/infinite-all-css-scrolling-slideshow/
+	- http://www.dwuser.com/education/content/creating-a-jquery-image-scroller/
 
 bugs
 	- hover effect not working after animation: use reverse instead of forward on animation
 		-http://stackoverflow.com/questions/26778434/should-hover-pseudo-state-style-change-work-after-css-animation-completes
 
+jQuery 
+	- fadeIn() and fadeOut()
+
+page fade out using css
+	- https://css-tricks.com/add-page-transitions-css-smoothstate-js/
+
+page transition 
+	- http://www.stylodesign.co.uk/
 
