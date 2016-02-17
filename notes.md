@@ -20,6 +20,7 @@ fading in and out and again
 
 flat design
 	- http://www.wix.com/blog/2014/07/why-and-how-to-use-flat-design/
+	- http://www.flatuicolorpicker.com/green
 
 tasteful web sites
 	- http://tati-express.arte.tv/fr/#/jeux
@@ -34,6 +35,8 @@ tasteful web sites
 	- http://www.doudoublues.com/histoire
 		- moving objects and bokeh effect
 
+moving the whale 
+	- http://jsfiddle.net/MMZ2h/4/
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 KELP FOREST
@@ -64,3 +67,5 @@ page fade out using css
 page transition 
 	- http://www.stylodesign.co.uk/
 
+scroll position and manipulating it
+	- http://www.w3schools.com/jquery/css_scrollleft.asp
