@@ -1,0 +1,179 @@
+<?php /* Template Name: trees */ ?>
+
+	<style>
+		#placeHolder {
+			width: 100%;
+			height: 660px;
+		}
+	 	#treeMain { 
+	 		width: 66.666%;
+	 		margin: auto;
+	 		position: relative;
+	 		background-color: #ffe9e2; 
+	 		bottom: 0;
+		    position: absolute;
+		    left: 0;
+		    right: 0;
+	 	}
+		.tree {
+			display: none;
+			width: 66.666%;
+			margin: auto;
+			height: 632px;
+			max-width: 1200px;
+			top: 800px;
+			position: absolute;
+			margin-bottom: 0;
+			bottom: -400px;
+		}
+		.tree img  { width: 100%; bottom: 0; position: absolute; }
+		#tree1 { 
+			z-index:9;
+			transition: all 15s ease-out;
+    	}
+		#tree2 {
+			z-index:8;
+			transition: all 12s ease-out;
+		}
+		#tree3 { 
+			z-index:7;
+			transition: all 13s ease-out;
+		}
+		#tree4 { 
+			z-index:6;
+			transition: all 11s ease-out;
+		}
+		#tree5 { 
+			z-index:5;
+			transition: all 10s ease-out;
+		}
+		#tree6 { 
+			z-index:4;
+			transition: all 12s ease-out;
+		}
+		#textBox {
+			top: 0;
+		    z-index: 11;
+    		color: #960b35;
+		    font-size: 36px;
+		    position: absolute;
+		    letter-spacing: 4px;
+		    font-family: fantasy;
+		    margin: 74px 0 0 74px;
+  			-webkit-font-smoothing: antialiased;'
+		}
+		#textBox:hover { opacity: 7; }
+		#textBox a { color: #960b35; text-decoration: none; }
+
+		#letter span { 
+			opacity: 0;
+			margin-right: 3px;
+			transition: all 1s ease-out;
+			letter-spacing: 2px;
+		}
+		#sun {
+			width: 300px;
+		    height: 300px;
+		    background-color: F5AB35;
+		    position: absolute;
+		    border-radius: 50%;
+		    opacity: 0.8;
+		    left: 60%;
+		    bottom: 8%;
+		    z-index: 1;
+		    display: none;
+		}
+
+
+	</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<embed src="uke2.mp3" hidden="true" autostart="true" loop="1">
+<div id='sun'></div>
+<div id='treeMain'>
+	<div id='textBox' class='cssTyping'>
+		<a href='/'>
+			<p id='letter'>pacific blues</p>
+		</a>
+	</div>
+	<div id='placeHolder'></div>
+	<div id='tree1' class='tree'><img src='tree1.png'></div>
+	<div id='tree2' class='tree'><img src='tree2.png'></div>
+	<div id='tree3' class='tree'><img src='tree3.png'></div>
+	<div id='tree4' class='tree'><img src='tree4.png'></div>
+	<div id='tree5' class='tree'><img src='tree5.png'></div>
+	<div id='tree6' class='tree'><img src='tree6.png'></div>
+
+</div>
+
+<script>
+	
+	function treeAnimation(tree, delay){
+		setTimeout(function(){ 
+			$('#'+tree).css('display','initial');
+			setTimeout(function(){ 
+				$('#'+tree).css('bottom','0').css('position','fixed');
+			},100);
+		}, delay);
+	}
+	$( document ).ready(function() {
+		// the timeouts prevents the tree divs from showing up at the bottom when scrolling down before the the animation is over
+		treeAnimation('tree1', 2000);
+		treeAnimation('tree2', 4000);
+		treeAnimation('tree3', 6000);
+		treeAnimation('tree4', 8000);
+		treeAnimation('tree5', 10500);
+		treeAnimation('tree6', 12000);
+	});
+
+
+	// typewriter sound
+	var audioType = document.createElement('audio');
+	    audioType.setAttribute('src', 'type.wav');
+	var audioReturn = document.createElement('audio');
+	    audioReturn.setAttribute('src', 'return.wav');
+		
+	// typewriter effect 
+	var words = $('#letter').text().split("");
+	for (i in words){
+		words[i] = "<span id=\'word"+i+"\'>" + words[i] + "</span>";
+		textUpdate += words[i];
+	}
+	var textUpdate = words.join('');
+	$('#letter').html(textUpdate);
+
+	 
+	$(document).ready(function() {
+		setTimeout(function(){
+
+			var i = 0;
+			var h = 0;
+			var textTime= 1000;
+
+			for (i in words){
+				setTimeout(function(){
+					// an additional variable to overcome scope
+					$('#word'+h).css('opacity',1);
+					audioType.play();
+					h++;
+				}, textTime);
+
+				// increment the new time randomly betweekn 50  and 800
+				textTime +=  Math.floor(Math.random() * 900) + 300;
+			}
+
+			setTimeout(function(){
+				audioReturn.play();
+				setTimeout(function(){
+					$('#letter').append('<span style="opacity:1">.</span>');
+					$('#sun').css('display','initial');
+				}, 300);
+			}, textTime + 1500);
+		},18000);
+	});
+
+</script>
+
+
+
+

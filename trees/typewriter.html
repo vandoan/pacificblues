@@ -1,0 +1,55 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<style>
+#letter span { 
+	opacity: 0;
+	transition: all 1s ease-out;
+	letter-spacing: 2px;
+}
+</style>
+
+<h1 id='letter'>hello, world. good morning.</h1>
+
+<script>
+    // typewriter sound
+    var audioType = document.createElement('audio');
+        audioType.setAttribute('src', 'type.wav');
+    var audioReturn = document.createElement('audio');
+        audioReturn.setAttribute('src', 'return.wav');
+ 	
+	// typewriter effect 
+	var words = $('#letter').text().split("");
+	for (i in words){
+		words[i] = "<span id=\'word"+i+"\'>" + words[i] + "</span>";
+		textUpdate += words[i];
+	}
+	var textUpdate = words.join('');
+	$('#letter').html(textUpdate);
+
+ 
+
+	var i = 0;
+	var h = 0;
+	var textTime= 1000;
+
+	for (i in words){
+		setTimeout(function(){
+			// an additional variable to overcome scope
+			$('#word'+h).css('opacity',1);
+			audioType.play();
+			h++;
+		}, textTime);
+
+		// increment the new time randomly betweekn 50  and 800
+		textTime +=  Math.floor(Math.random() * 800) + 100;
+	}
+
+	setTimeout(function(){
+		audioReturn.play();
+	}, textTime + 1500);
+
+</script>
+
+
+
+</html>

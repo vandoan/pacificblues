@@ -69,3 +69,14 @@ page transition
 
 scroll position and manipulating it
 	- http://www.w3schools.com/jquery/css_scrollleft.asp
+
+parallax page 
+	- http://www.sbs.com.au/theboat/
+	- http://www.giampierobodino.com/
+	- http://urban-walks.com/#map
+	- http://www.nrly.co/
+	- http://restaurantleduc.com/
+	- http://jonathannicol.com/projects/parallax-scrolling/
+
+
+
