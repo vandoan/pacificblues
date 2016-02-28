@@ -8,3 +8,18 @@ Moreover, instead of using some plugin for the typewriter effect at the end, a u
 
 One additional note, the ukulele music was added to enhance the animation effect and to slow down the viewer, as the animation is more about slow-pace and taking in an image that comes together.
 
+
+
+
+
+some ideas from this project
+	- parallax
+	- timing of layers
+	- sound incorporation
+	- photoshop work and layers
+	- color palatte
+	- sound samples from www.freesound.org
+	- typewriter and sound effects with javascript
+	- randomizer with typewriter effect for a more organic feel
+	- the sun's appearance and typewriter ding for the crescendo
+
